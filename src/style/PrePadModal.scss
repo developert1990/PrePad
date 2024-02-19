@@ -1,0 +1,37 @@
+.prepad-modal-inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  background-color: $dark;
+  border: 2px solid $dark;
+  box-shadow: 4px 4px 4px $dark;
+  color: $fontColorWhite;
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+
+  &:focus-visible {
+    outline: none;
+  }
+
+  #modal-modal-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  #modal-modal-description {
+    margin-bottom: 10px;
+  }
+  #modal-modal-bottom {
+    display: flex;
+    justify-content: flex-end;
+
+    button {
+      &:nth-child(1) {
+        margin-right: 10px;
+      }
+    }
+  }
+}

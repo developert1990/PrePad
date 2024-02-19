@@ -1,11 +1,16 @@
 import { PrePadRouter } from "./router";
+import { Provider } from "react-redux";
+import store from "./store";
+
 function App() {
   return (
-    <div className="App">
-      <div id="main-section">
-        <PrePadRouter />
+    <Provider store={store}>
+      <div className="App">
+        <div id="main-section">
+          <PrePadRouter />
+        </div>
       </div>
-    </div>
+    </Provider>
   );
 }
 
