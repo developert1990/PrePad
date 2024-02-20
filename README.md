@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Project set up
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### `npm install`
 
 ## Available Scripts
 
@@ -16,55 +16,32 @@ You may also see any lint errors in the console.
 
 ### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Features
 
-### `npm run build`
+1. Main page
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Display list of all contacts.
+- Redirect to the "Edit page".
+- Delete a contact (Open Modal).
+- Pagination is available.
+- If you delete the last entry on the current page, you will be redirected to the previous page. If it is the first page, a message saying "No data..." will appear.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. Edit page
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Can edit "First Name" and "Last Name" (the email field is disabled).
+- Validate each field.
+- After successful editing, you will be redirected to the "Main Page" after 3 seconds.
 
-### `npm run eject`
+3. Create page
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Can create a new contact.
+- Validate each field.
+- It checks if the email is unique once you click the "Submit" button.
+- After successful creation, you will be redirected to the "Main Page" after 3 seconds.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Description
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1.  Since no RESTful API calls are made, the loading feature was not used.
+2.  Since the backend and database have not been built currently, the values are stored in local storage to maintain data.
+3.  Currently, only code to test business logic has been written. If necessary in the future, we can test each component, and end-to-end testing is also possible using cypress.
+4.  As this app grows, there might be a significant increase in components. so I use Redux-toolkit which helps us to manage states.

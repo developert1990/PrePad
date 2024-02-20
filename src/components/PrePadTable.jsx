@@ -45,7 +45,7 @@ export const PrePadTable = ({ headers }) => {
             <tbody>
               <tr>
                 <td className="no-data-message" colSpan="5">
-                  No data here..
+                  No data..
                 </td>
               </tr>
             </tbody>
