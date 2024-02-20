@@ -39,20 +39,6 @@ const initialState = {
       firstName: "sangmean",
       lastName: "hong",
     },
-    {
-      id: uuidv4(),
-      email: "777@gmail.com",
-      firstName: "hyeyoung",
-      lastName: "lee",
-    },
-    { id: uuidv4(), email: "888@gmail.com", firstName: "sia", lastName: "hong" },
-    { id: uuidv4(), email: "999@gmail.com", firstName: "lia", lastName: "hong" },
-    {
-      id: uuidv4(),
-      email: "0000@gmail.com",
-      firstName: "younghee",
-      lastName: "jang",
-    },
   ],
   selectedContact: {},
 };
@@ -78,6 +64,14 @@ const contactSlice = createSlice({
     },
     add: (state, action) => {
       const parsedContactInfo = parseContactsFromLS();
+      const { contacts } = parsedContactInfo;
+
+      // Check if email is unique
+      const hasSameEmail = contacts.some((contact) => contact.email === action.payload.email);
+      if (hasSameEmail) {
+        throw new Error("Email should be unique");
+      }
+
       const contactInfo = { id: uuidv4(), ...action.payload };
       parsedContactInfo.contacts.unshift(contactInfo);
       localStorage.setItem("initialState", JSON.stringify(parsedContactInfo));

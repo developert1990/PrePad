@@ -12,11 +12,15 @@ export const CreatePage = () => {
   const dispatch = useDispatch();
   const { setCount, count, setHasSubmitted, hasSubmitted } = useTimer();
 
-  const onSubmit = (values) => {
-    dispatch(add(values));
-    if (Object.keys(formik.errors).length === 0) {
-      setHasSubmitted(true);
-      setCount(3);
+  const onSubmit = (values, { setErrors }) => {
+    try {
+      dispatch(add(values));
+      if (Object.keys(formik.errors).length === 0) {
+        setHasSubmitted(true);
+        setCount(3);
+      }
+    } catch (error) {
+      setErrors({ email: error.message });
     }
   };
 
