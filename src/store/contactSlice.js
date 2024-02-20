@@ -70,6 +70,28 @@ const contactSlice = createSlice({
     return state;
   },
   reducers: {
+    getOne: (state, action) => {
+      const contact = state.contacts.find((contact) => contact.id === action.payload);
+      if (contact) {
+        state.selectedContact = contact;
+      }
+    },
+    add: (state, action) => {
+      const parsedContactInfo = parseContactsFromLS();
+      const contactInfo = { id: uuidv4(), ...action.payload };
+      parsedContactInfo.contacts.unshift(contactInfo);
+      localStorage.setItem("initialState", JSON.stringify(parsedContactInfo));
+
+      state.contacts.unshift(contactInfo);
+    },
+    edit: (state, action) => {
+      const parsedContactInfo = parseContactsFromLS();
+      const objWithIdIndex = parsedContactInfo.contacts.findIndex((obj) => obj.id === action.payload.id);
+      parsedContactInfo.contacts[objWithIdIndex] = action.payload;
+      localStorage.setItem("initialState", JSON.stringify(parsedContactInfo));
+
+      state.contacts[objWithIdIndex] = action.payload;
+    },
     remove: (state, action) => {
       const parsedContactInfo = parseContactsFromLS();
       const objWithIdIndex = parsedContactInfo.contacts.findIndex((obj) => obj.id === action.payload);
