@@ -1,0 +1,30 @@
+.prepad-button {
+  padding: 5px 10px;
+  color: $fontColorWhite;
+  background-color: $mainColor;
+  border: none;
+  font-size: 14px;
+  &:hover {
+    cursor: pointer;
+    background-color: $fontColorWhite;
+    color: $mainColor;
+    transition: all 0.3s ease-in-out;
+  }
+
+  &:disabled {
+    background-color: $lightMainColor;
+    color: $fontColorWhite;
+    cursor: not-allowed;
+  }
+}
+
+#create-page,
+#edit-page {
+  .prepad-button-wrapper {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .prepad-alert {
+    margin-top: 10px;
+  }
+}

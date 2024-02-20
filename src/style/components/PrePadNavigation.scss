@@ -1,0 +1,27 @@
+#prepad-navigation {
+  position: sticky;
+  display: flex;
+  justify-content: space-between;
+
+  a {
+    color: $fontColorWhite;
+    text-decoration: none;
+    font-weight: bold;
+
+    &:hover {
+      color: $mainColor;
+    }
+    &:nth-child(1) {
+      margin-right: 30px;
+    }
+  }
+
+  .navigation-links {
+    display: flex;
+    align-items: center;
+  }
+
+  .active {
+    color: $mainColor;
+  }
+}

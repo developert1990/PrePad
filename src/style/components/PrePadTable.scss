@@ -1,0 +1,29 @@
+#prepad-table {
+  tr {
+    font-weight: bold;
+  }
+
+  .delete-contact {
+    margin-right: 5px;
+  }
+
+  .delete-contact,
+  .edit-contact {
+    &:hover {
+      cursor: pointer;
+      color: $mainColor;
+      transition: all 0.3s ease-in-out;
+    }
+  }
+
+  .pagination-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .no-data-message {
+    text-align: center;
+    padding: 15px;
+  }
+}

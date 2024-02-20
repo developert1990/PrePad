@@ -1,6 +1,13 @@
 @import "./constants/variables";
 @import "./constants/mixin";
-@import "./PrePadModal.scss";
+@import "./components/PrePadModal.scss";
+@import "./components/MainPage.scss";
+@import "./components/PrePadNavigation.scss";
+@import "./components/PrePadMainTitle.scss";
+@import "./components/PrePadTable.scss";
+@import "./components/PrePadButton.scss";
+@import "./components/PrePadInputField.scss";
+@import "./components/PageNotFound.scss";
 
 * {
   box-sizing: border-box;
@@ -20,4 +27,22 @@ body {
   align-items: center;
   justify-content: center;
   color: white;
+
+  #main-section,
+  #error-page {
+    height: 500px;
+    position: relative;
+  }
+}
+
+@include desktop-tablet {
+  #main-section {
+    width: 680px;
+  }
+}
+
+@include mobile {
+  #main-section {
+    width: 380px;
+  }
 }
